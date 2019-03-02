@@ -1,4 +1,4 @@
-{% set version = '0.6-3' %}
+{% set version = '0.6-4' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,22 +7,22 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: SpatialVx_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/SpatialVx_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/SpatialVx/SpatialVx_{{ version }}.tar.gz
-  sha256: 5b1f1f2c60f3744f281e76382eb991e585eff81212ea6a941c090a42c942106a
+  sha256: bb05ee9aca5f562c9c595f5d11ac5c3af2742e6058888e00034e8930466c80d0
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
-  number: 1000
+  number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-circstats
@@ -64,12 +64,25 @@ about:
     which largely come from image analysis, computer vision, and similar, are available,
     with more on the way.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
+    - conda-forge/r
+
+# Package: SpatialVx
+# Version: 0.6-4
+# Date: 2018-12-23
+# Title: Spatial Forecast Verification
+# Author: Eric Gilleland <EricG@ucar.edu>
+# Maintainer: Eric Gilleland <EricG@ucar.edu>
+# Depends: R (>= 2.10.0), spatstat (>= 1.37-0), fields (>= 6.8), smoothie, smatr, turboEM
+# Imports: distillery, maps, boot, CircStats, fastcluster, waveslim
+# Description: Spatial forecast verification arose from verifying high-resolution forecasts, where coarser-resolution models generally are favored even when a human forecaster finds the higher-resolution model to be considerably better.  Most newly proposed methods, which largely come from image analysis, computer vision, and similar, are available, with more on the way.
+# License: GPL (>= 2)
+# URL: http://www.ral.ucar.edu/projects/icp/SpatialVx
+# BugReports: http://www.ral.ucar.edu/staff/ericg
+# NeedsCompilation: no
+# Packaged: 2019-01-02 04:43:03 UTC; eric
+# Repository: CRAN
+# Date/Publication: 2019-01-04 11:00:16 UTC
