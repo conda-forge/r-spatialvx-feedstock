@@ -1,4 +1,4 @@
-{% set version = '0.6-5' %}
+{% set version = "0.6-6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/SpatialVx_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/SpatialVx/SpatialVx_{{ version }}.tar.gz
-  sha256: e50fd1c0ab1271b4d99bcfe56b92742a2e9528b326a2e3836fc81ba50c324dd8
+  sha256: bd869212fea37782e046829359c18c8c967630411f140c84bda3ecee4d778ba0
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -58,13 +58,10 @@ test:
 about:
   home: http://www.ral.ucar.edu/projects/icp/SpatialVx
   license: GPL (>= 2)
-  summary: Spatial forecast verification arose from verifying high-resolution forecasts, where
-    coarser-resolution models generally are favored even when a human forecaster finds
-    the higher-resolution model to be considerably better.  Most newly proposed methods,
-    which largely come from image analysis, computer vision, and similar, are available,
-    with more on the way.
+  summary: Spatial forecast verification arose from verifying high-resolution forecasts, where coarser-resolution models generally are favored even when a human forecaster finds the higher-resolution model to be considerably better.  Most newly proposed methods, which largely come from image analysis, computer vision, and
+    similar, are available, with more on the way.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
