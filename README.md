@@ -3,7 +3,7 @@ About r-spatialvx
 
 Home: http://www.ral.ucar.edu/projects/icp/SpatialVx
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Feedstock license: BSD-3-Clause
 
