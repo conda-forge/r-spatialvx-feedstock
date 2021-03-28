@@ -1,4 +1,4 @@
-{% set version = "0.7-1" %}
+{% set version = "0.8" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/SpatialVx_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/SpatialVx/SpatialVx_{{ version }}.tar.gz
-  sha256: c9f4208e65974dd0516c6c29d81993602c67d0b21c1e189ea2c80428d2776b75
+  sha256: 3c6ada0ee7e1e1c1b0498fb6f87bea935f0f20df26795e22f25ac0a259728182
 
 build:
   merge_build_host: true  # [win]
