@@ -1,11 +1,11 @@
-About r-spatialvx
-=================
+About r-spatialvx-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-spatialvx-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.ral.ucar.edu/projects/icp/SpatialVx
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-spatialvx-feedstock/blob/main/LICENSE.txt)
 
 Summary: Spatial forecast verification arose from verifying high-resolution forecasts, where coarser-resolution models generally are favored even when a human forecaster finds the higher-resolution model to be considerably better.  Most newly proposed methods, which largely come from image analysis, computer vision, and similar, are available, with more on the way.
 
